@@ -16,7 +16,6 @@ class ChatPage {
 
   static late String currentUser;
   static late String token;
-  static late String id;
 
   static setCurrentUser(String user) {
     currentUser = user;
@@ -26,13 +25,6 @@ class ChatPage {
     ChatPage.token = token;
   }
 
-  static setId(String id) {
-    ChatPage.id = id;
-  }
-
-  static getId() {
-    return id;
-  }
 
   static getCurrentUser() {
     return currentUser;
@@ -111,7 +103,7 @@ class ChatPage {
             ),
 
             FutureBuilder(
-              future: getConversation(token: token, id: id),
+              future: getConversation(token: token, id: getCurrentUser()),
               builder: (context, snapshot) {
                 //check waiting state
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -135,7 +127,6 @@ class ChatPage {
 
                         final String cID = chatList[index]["_id"];
                         final String sID = chatList[index]["members"][0];
-                        final String rID = chatList[index]["members"][1];
 
                         return ConversationList(
                           name: rNames[index],
@@ -144,7 +135,6 @@ class ChatPage {
                           sID: sID,
                           cID: cID,
                           token: token,
-                          rID: rID,
                         );
                       },
                     );

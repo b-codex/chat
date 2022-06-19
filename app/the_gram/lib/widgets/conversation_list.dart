@@ -9,7 +9,6 @@ class ConversationList extends StatefulWidget {
   final String sID;
   final String cID;
   final String token;
-  final String rID;
 
   const ConversationList({
     Key? key,
@@ -18,7 +17,6 @@ class ConversationList extends StatefulWidget {
     required this.sID,
     required this.cID,
     required this.token,
-    required this.rID,
   }) : super(key: key);
   @override
   // ignore: library_private_types_in_public_api
@@ -37,7 +35,6 @@ class _ConversationListState extends State<ConversationList> {
             sID: widget.sID,
             cID: widget.cID,
             token: widget.token,
-            rID: widget.rID,
           );
         }));
       },

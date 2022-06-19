@@ -94,7 +94,6 @@ Widget loginScreen(context) {
 
                         ChatPage.setCurrentUser(user);
                         ChatPage.setToken(token);
-                        ChatPage.setId(user);
 
                         Navigator.of(context).push(
                           MaterialPageRoute(
